@@ -1,0 +1,35 @@
+<div>
+	<table class="table">
+		<thead>
+		  <tr>
+			<th scope="col">From</th>
+			<th scope="col">To</th>
+			<th scope="col">Depature Time</th>
+			<th scope="col">Landing Time</th>
+			<th scope="col">Price</th>
+		  </tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="flight in flights">
+				<td ng-repeat="(key ,val) in flight">{{val}}</td>
+			</tr>
+		</tbody>
+	  </table>
+	  <h5>Add flight:</h5>
+	  <form>
+		<div class="form-group">
+		  <label for="from">From</label>
+		  <input ng-model="flightObj.from" type="text" class="form-control" id="from" >
+		  <label for="from">To</label>
+		  <input ng-model="flightObj.to" type="text" class="form-control" id="from" >
+		  <label for="from">Depature Time</label>
+		  <input ng-model="flightObj.departue" type="text" class="form-control" id="from" >
+		  <label for="from">Landing Time</label>
+		  <input ng-model="flightObj.landing" type="text" class="form-control" id="from" >
+		  <label for="from">Price</label>
+		  <input ng-model="flightObj.price" type="text" class="form-control" id="from" >
+		</div>
+		<button type="submit" class="btn btn-primary" ng-click="addFlight($event)">Add Flight</button>
+	  </form>
+	  <span class="error">{{addFlightErr}}</span>
+</div>
